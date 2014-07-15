@@ -21,7 +21,7 @@ class Pdftk < BaseCustom
     
   end
   def prepare
-    File.delete("#{build_path}/bin/lib/libgcj.so.12") if File.exist?("#{build_path}/bin/libgcj.so.10")
+    File.delete("#{build_path}/bin/lib/libgcj.so.10") if File.exist?("#{build_path}/bin/libgcj.so.10")
     File.delete("#{build_path}/bin/pdftk") if File.exist?("#{build_path}/bin/pdftk")
   end
   
