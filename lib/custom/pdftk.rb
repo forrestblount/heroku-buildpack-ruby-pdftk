@@ -9,7 +9,7 @@ class Pdftk < BaseCustom
     "https://s3.amazonaws.com/lexspot-static/pdftk.tar.gz"
   end
   def used?
-    File.exist?("#{build_path}/bin/pdftk") && File.exist?("#{build_path}/bin/lib/libgcj.so.12")
+    File.exist?("#{build_path}/bin/pdftk") && File.exist?("#{build_path}/bin/lib/libgcj.so.10")
   end
   def compile
     write_stdout "compiling #{name}"
@@ -21,7 +21,7 @@ class Pdftk < BaseCustom
     
   end
   def prepare
-    File.delete("#{build_path}/bin/lib/libgcj.so.12") if File.exist?("#{build_path}/bin/libgcj.so.12")
+    File.delete("#{build_path}/bin/lib/libgcj.so.12") if File.exist?("#{build_path}/bin/libgcj.so.10")
     File.delete("#{build_path}/bin/pdftk") if File.exist?("#{build_path}/bin/pdftk")
   end
   
