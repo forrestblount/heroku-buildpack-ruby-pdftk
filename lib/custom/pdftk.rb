@@ -15,7 +15,7 @@ class Pdftk < BaseCustom
     write_stdout "compiling #{name}"
     #download the source and extract
     %x{ mkdir -p #{path} && curl --silent #{source_url} -o pdftk.tar.gz }
-    %x{ tar -zxvf -C #{path} } 
+    %x{ tar -zxvf pdftk.tar.gz -C #{path} } 
     write_stdout "complete compiling #{name}"
   end
   def cleanup!
